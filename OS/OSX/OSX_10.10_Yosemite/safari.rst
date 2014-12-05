@@ -11,7 +11,7 @@ Go to:
 
 Set “Search engine” to “DuckDuckGo”.
 
-.. images/safari_search_1.png
+.. image:: images/safari_search_1.png
 
 Clear history
 -------------
@@ -24,7 +24,7 @@ Go to:
 Set “Remove history items” to “After one day”.
 Set “ Remove download list items” to “Upon successful download”.
 
-.. images/safari_general_3.png
+.. image:: images/safari_general_3.png
 
 Disable AutoFill
 ----------------
@@ -36,7 +36,7 @@ Go to:
 
 Unmark all boxes.
 
-.. images/safari_autofill_1.png
+.. image:: images/safari_autofill_1.png
 
 Disable AutoFill username and passwords
 ---------------------------------------
@@ -48,7 +48,7 @@ Go to:
 
 Unmark “AutoFill user names and passwords”.
 
-.. images/safari_passwords_1.png
+.. image:: images/safari_passwords_1.png
 
 Disable open files after download
 ---------------------------------
@@ -60,7 +60,7 @@ Go to:
 
 Unmark “Open ‘safe’ files after downloading”.
 
-.. images/safari_general_4.png
+.. image:: images/safari_general_4.png
 
 Disable search suggestions
 --------------------------
@@ -73,7 +73,7 @@ Go to:
 Unmark “Include search engine suggestions”.
 Unmark “Include Spotlight suggestions”.
 
-.. images/safari_search_2.png
+.. image:: images/safari_search_2.png
 
 Disable website tracking
 ------------------------
@@ -85,7 +85,7 @@ Go to:
 
 Mark “Ask website not to track me”.
 
-.. images/safari_privacy_1.png
+.. image:: images/safari_privacy_1.png
 
 Open with a private window
 --------------------------
@@ -96,7 +96,7 @@ Go to:
 
 Set “Safari opens with” to “A new private window”.
 
-.. images/safari_general_1.png
+.. image:: images/safari_general_1.png
 
 Open with an empty page
 -----------------------
@@ -108,7 +108,7 @@ Go to:
 Set “New windows open with” to “Empty Page”.
 Set “New tabs open with” to “Empty Page”.
 
-.. images/safari_general_2.png
+.. image:: images/safari_general_2.png
 
 Show website address
 --------------------
@@ -119,4 +119,4 @@ Go to:
 
 Mark “Show full website address”.
 
-.. images/safari_advanced_1.png
+.. image:: images/safari_advanced_1.png
