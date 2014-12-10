@@ -1,6 +1,11 @@
 Apple Safari
 ------------
 
+According to `Wikipedia <https://en.wikipedia.org/wiki/Safari_(web_browser)>`_ Safari is *"a web browser developed by
+Apple Inc. included with the OS X and iOS operating systems. First released as a public beta on January 7, 2003, on the
+company's OS X operating system, it became Apple's default browser beginning with Mac OS X v10.3 "Panther".
+The native browser of iOS is also called Safari, but has a different UI and uses a different WebKit version and API"*.
+
 Change default search engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
