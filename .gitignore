@@ -45,3 +45,4 @@ Thumbs.db
 .sublime-project
 .pydevproject
 .idea
+_build/*
