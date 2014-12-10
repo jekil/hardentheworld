@@ -1,9 +1,22 @@
-HARDEN THE WORLD Project
-========================
+################
+Harden the World
+################
 
 Harden the World is a community project focused on developing common guidelines and best practices to deploy secure
 configurations.
 This repository contains hardening guidelines for devices, applications and OSs.
+
+********
+Contents
+********
+
+.. toctree::
+
+    Applications/index
+
+*****************
+About the project
+*****************
 
 Contributing
 ------------
