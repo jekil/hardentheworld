@@ -99,6 +99,7 @@ Open with a private window
 
 Set Safari to open only in new private window to keep your privacy.
 Go to:
+
     Open Safari -> Preferences -> General
 
 Set “Safari opens with” to “A new private window”.
@@ -111,6 +112,7 @@ Open with an empty page
 
 Used to open new windows and tabs with an empty page.
 Go to:
+
     Open Safari -> Preferences -> General
 
 Set “New windows open with” to “Empty Page”.
@@ -124,6 +126,7 @@ Show website address
 
 By default Safari shows only the domain, it is suggested to show all the website address.
 Go to:
+
     Open Safari -> Preferences -> Advances
 
 Mark “Show full website address”.
