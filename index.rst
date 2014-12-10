@@ -6,6 +6,8 @@ Harden the World is a community project focused on developing common guidelines 
 configurations.
 This repository contains hardening guidelines for devices, applications and OSs.
 
+Project repository: `<https://github.com/jekil/hardentheworld>`_
+
 ********
 Contents
 ********
