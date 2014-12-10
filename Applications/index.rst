@@ -9,4 +9,6 @@ Client side applicaitions
 =========================
 
 .. toctree::
+    :maxdepth: 1
+
     Apple_Safari/index
