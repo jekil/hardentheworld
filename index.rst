@@ -2,10 +2,12 @@
 Harden the World
 ################
 
-Harden the World is a community project focused on developing common guidelines and best practices to deploy secure
-configurations.
+Every day many people, including me, waste time googling for procedures, configurations and a way to harden their
+services.
+So I created Harden the World with the hope to start a community project focused on developing common guidelines and best practices to deploy secure configurations.
 This repository contains hardening guidelines for devices, applications and OSs.
 
+Project home: `<http://hardentheworld.org>`_
 Project repository: `<https://github.com/jekil/hardentheworld>`_
 
 ********
@@ -24,7 +26,10 @@ About the project
 Contributing
 ------------
 
-Please send a push request with your contribution.
+Every kind of contribution is really appreciated! Feature requests, suggestions,
+fixes or documentation contributions are welcome.
+Please send a push request with your contribution using Github push requests or
+just get in touch with alessandro@tanasi.it (@jekil).
 
 Feedback
 --------
@@ -38,8 +43,8 @@ The license is `Creative Commons Attribution 4.0 International <http://creativec
 
 You are free to:
 
- * Share — copy and redistribute the material in any medium or format
- * Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+ * **Share** — copy and redistribute the material in any medium or format
+ * **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
 
 Under the following terms:
 
