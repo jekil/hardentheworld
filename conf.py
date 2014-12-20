@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, os
+from datetime import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -30,7 +31,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Harden the World'
-copyright = u'2014, Alessandro Tanasi (@jekil)'
+year = datetime.now().year
+copyright = u'{0}, Alessandro Tanasi (@jekil)'.format(year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
