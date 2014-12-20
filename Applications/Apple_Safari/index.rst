@@ -1,18 +1,23 @@
-Apple Safari
-------------
+Apple Safari 8
+--------------
 
 According to `Wikipedia <https://en.wikipedia.org/wiki/Safari_(web_browser)>`_ Safari is *"a web browser developed by
 Apple Inc. included with the OS X and iOS operating systems. First released as a public beta on January 7, 2003, on the
 company's OS X operating system, it became Apple's default browser beginning with Mac OS X v10.3 "Panther".
 The native browser of iOS is also called Safari, but has a different UI and uses a different WebKit version and API"*.
 
+This chapter is dedicated to configuring Apple Safari version 8.x. It comes by default with Mac OS X 10.10 (Yosemite).
+
+.. contents::
+   :local:
+
 Change default search engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Change default search engine to DuckDuckGo, it is a search engine who takes care of your privacy.
+Change default search engine to `DuckDuckGo <https://duckduckgo.com/>`_, it is a search engine who takes care of your privacy.
 Go to:
 
-    Open Safari -> Preferences -> Search
+    Open Safari ⇒ Preferences ⇒ Search
 
 Set “Search engine” to “DuckDuckGo”.
 
@@ -22,13 +27,13 @@ Set “Search engine” to “DuckDuckGo”.
 Clear history
 ^^^^^^^^^^^^^
 
-Used to delete all traces you leave.
+Used to never leave navigation traces in browser history.
 Go to:
 
-    Open Safari -> Preferences -> General
+    Open Safari ⇒ Preferences ⇒ General
 
 Set “Remove history items” to “After one day”.
-Set “ Remove download list items” to “Upon successful download”.
+Set “Remove download list items” to “Upon successful download”.
 
 .. image:: images/safari_general_3.png
    :align: center
@@ -39,9 +44,9 @@ Disable AutoFill
 Disables automatic fill of forms.
 Go to:
 
-    Open Safari -> Preferences -> AutoFill
+    Open Safari ⇒ Preferences ⇒ AutoFill
 
-Unmark all boxes.
+Unckeck all boxes.
 
 .. image:: images/safari_autofill_1.png
    :align: center
@@ -52,9 +57,9 @@ Disable AutoFill username and passwords
 Disables automatic fill of forms with usernames and passwords.
 Go to:
 
-    Open Safari -> Preferences -> Passwords
+    Open Safari ⇒ Preferences ⇒ Passwords
 
-Unmark “AutoFill user names and passwords”.
+Uncheck “AutoFill user names and passwords”.
 
 .. image:: images/safari_passwords_1.png
    :align: center
@@ -62,12 +67,13 @@ Unmark “AutoFill user names and passwords”.
 Disable open files after download
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disables automatic opening of downloaded file, eve if they are safe, used to have total control on opening events.
+Disables automatic opening of downloaded file, even if they are safe. It is suggested to never run arbitrary files
+downloaded.
 Go to:
 
-    Open Safari -> Preferences -> General
+    Open Safari ⇒ Preferences ⇒ General
 
-Unmark “Open ‘safe’ files after downloading”.
+Uncheck “Open ‘safe’ files after downloading”.
 
 .. image:: images/safari_general_4.png
    :align: center
@@ -75,13 +81,13 @@ Unmark “Open ‘safe’ files after downloading”.
 Disable search suggestions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disables suggestions to avoid data leaks.
+Disables suggestions to avoid leaking potential data when typing in the search box.
 Go to:
 
-    Open Safari -> Preferences -> Search
+    Open Safari ⇒ Preferences ⇒ Search
 
-Unmark “Include search engine suggestions”.
-Unmark “Include Spotlight suggestions”.
+Uncheck “Include search engine suggestions”.
+Uncheck “Include Spotlight suggestions”.
 
 .. image:: images/safari_search_2.png
    :align: center
@@ -92,9 +98,9 @@ Disable website tracking
 Disables website tracking asking sites to do not track.
 Go to:
 
-    Open Safari -> Preferences -> Privacy
+    Open Safari ⇒ Preferences ⇒ Privacy
 
-Mark “Ask website not to track me”.
+Check “Ask website not to track me”.
 
 .. image:: images/safari_privacy_1.png
    :align: center
@@ -105,7 +111,7 @@ Open with a private window
 Set Safari to open only in new private window to keep your privacy.
 Go to:
 
-    Open Safari -> Preferences -> General
+    Open Safari ⇒ Preferences ⇒ General
 
 Set “Safari opens with” to “A new private window”.
 
@@ -115,10 +121,10 @@ Set “Safari opens with” to “A new private window”.
 Open with an empty page
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Used to open new windows and tabs with an empty page.
+Set Safari to open new windows and tabs with an empty page.
 Go to:
 
-    Open Safari -> Preferences -> General
+    Open Safari ⇒ Preferences ⇒ General
 
 Set “New windows open with” to “Empty Page”.
 Set “New tabs open with” to “Empty Page”.
@@ -129,12 +135,12 @@ Set “New tabs open with” to “Empty Page”.
 Show website address
 ^^^^^^^^^^^^^^^^^^^^
 
-By default Safari shows only the domain, it is suggested to show all the website address.
+By default Safari shows only the domain in the address bar, it is suggested to show the whole website address.
 Go to:
 
-    Open Safari -> Preferences -> Advances
+    Open Safari ⇒ Preferences ⇒ Advances
 
-Mark “Show full website address”.
+Check “Show full website address”.
 
 .. image:: images/safari_advanced_1.png
    :align: center
