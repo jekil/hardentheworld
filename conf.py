@@ -34,7 +34,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'Harden the World'
 year = datetime.now().year
-copyright = u'{0}, Alessandro Tanasi (@jekil)'.format(year)
+copyright = u'2014-{0}, Alessandro Tanasi (@jekil)'.format(year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
