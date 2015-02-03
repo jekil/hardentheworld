@@ -8,6 +8,19 @@ GPG Suite is an implementation of GPG for Mac OS X with a keychain and an Apple 
 .. contents::
    :local:
 
+Automatic update check
+^^^^^^^^^^^^^^^^^^^^^^
+
+It is recommended to keep software always updated.
+To enable automatic update check, go to:
+
+    Open Apple Mail  ⇒ Preferences ⇒ GPGMail panel
+
+Check "Automatically check for updates" option.
+
+.. image:: images/gpgmail_2.png
+   :align: center
+
 Check installation package signature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,17 +38,4 @@ To enable drafts encryption, go to:
 Check "Encrypt drats" option.
 
 .. image:: images/gpgmail_1.png
-   :align: center
-
-Automatic update check
-^^^^^^^^^^^^^^^^^^^^^^
-
-It is recommended to keep software always updated.
-To enable automatic update check, go to:
-
-    Open Apple Mail  ⇒ Preferences ⇒ GPGMail panel
-
-Check "Automatically check for updates" option.
-
-.. image:: images/gpgmail_2.png
    :align: center
