@@ -30,12 +30,12 @@ It is recommended to check digital signature before the installation.
 Encrypt drafts
 ^^^^^^^^^^^^^^
 
-It is recommended to store mail drafts in an encrypted format, to avoid leak of draft emails saved in cleartext.
+It is recommended to store mail drafts in an encrypted format, to avoid leak of draft emails saved in clear text.
 To enable drafts encryption, go to:
 
     Open Apple Mail  ⇒ Preferences ⇒ GPGMail panel
 
-Check "Encrypt drats" option.
+Check "Encrypt drafts" option.
 
 .. image:: images/gpgmail_1.png
    :align: center
