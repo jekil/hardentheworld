@@ -3,7 +3,7 @@ GPG Suite
 
 According to `GPG Tools official website <https://gpgtools.org/>`_ GPG Tools is used *"to encrypt, decrypt, sign and
 verify files or messages. Manage your GPG Keychain with a few simple clicks and experience the full power of GPG"*.
-GPG Suite is an implementation og GPG for Mac OS X with a keychain and an Apple Mail extension.
+GPG Suite is an implementation of GPG for Mac OS X with a keychain and an Apple Mail extension.
 
 .. contents::
    :local:
