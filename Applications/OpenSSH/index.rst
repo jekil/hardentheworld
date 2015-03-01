@@ -6,7 +6,7 @@ SSH connectivity tools that technical users of the Internet rely on. Users of te
 that their password is transmitted across the Internet unencrypted, but it is. OpenSSH encrypts all traffic
 (including passwords) to effectively eliminate eavesdropping, connection hijacking, and other attacks.
 Additionally, OpenSSH provides secure tunneling capabilities and several authentication methods, and supports all
-SSH protocol versions."*.
+SSH protocol versions"*.
 
 .. contents::
    :local:
