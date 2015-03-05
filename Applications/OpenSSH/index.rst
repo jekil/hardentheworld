@@ -11,11 +11,20 @@ SSH protocol versions"*.
 .. contents::
    :local:
 
+Change port number
+^^^^^^^^^^^^^^^^^^
+
+SSH default port (22/tcp) is a service target of worms, script kiddies, and all kind of brute forcing around.
+It is suggested to edit *sshd_config* file (usually located in */etc/ssh/sshd_config*) to run the SSH daemon on a non default
+port, using the *Port* option::
+
+    Port 34567
+
 Configure Idle Log Out Timeout Interval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Users can login to server via ssh, it is suggested to set an idle timeout interval to avoid unattended ssh session.
-Open sshd_config and make sure following values are configured::
+Open *sshd_config* (usually located in */etc/ssh/sshd_config*) and make sure following values are configured::
 
     ClientAliveInterval 300
     ClientAliveCountMax 0
@@ -23,14 +32,14 @@ Open sshd_config and make sure following values are configured::
 Enable a Warning Banner
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Set a warning banner by updating sshd_config with the following line::
+Set a warning banner by updating *sshd_config* with the following line::
 
     Banner /etc/issue
 
 Disable Empty Passwords
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You need to explicitly disallow remote login from accounts with empty passwords, update sshd_config with the following
+You need to explicitly disallow remote login from accounts with empty passwords, update *sshd_config* with the following
 line::
 
     PermitEmptyPasswords no
@@ -40,7 +49,7 @@ Disable SSH forwarding
 
 Port forwarding via SSH (SSH tunneling) creates a secure connection between a local computer and a remote
 machine through which services can be relayed.
-It is suggested to disable this feature, update sshd_config with the following line::
+It is suggested to disable this feature, update *sshd_config* with the following line::
 
     AllowTcpForwarding no
 
@@ -64,7 +73,7 @@ Whitelisting / blacklisting users
 By default all systems user can login via SSH using their password or public key.
 Sometime you create UNIX / Linux user account for ftp or email purpose. However, those user can login
 to system using SSH.
-To only allow antani and tapioco user to use the system via SSH, add the following to sshd_config::
+To only allow antani and tapioco user to use the system via SSH, add the following to *sshd_config*::
 
     AllowUsers antani tapioco
 
