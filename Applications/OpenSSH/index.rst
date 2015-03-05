@@ -60,6 +60,19 @@ foobar::
     Match User foobar
     AllowTcpForwarding yes
 
+Do not use SSH Agent Forwarding
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SSH Agent Forwarding is as an easy way to connect to a host with your SSH key and from there connect to another host with the same key.
+For example this is used when you cannot connect directly to the second host from your workstation.
+To enable SSH Agent Forwarding from comand line you have to use ssh -A from command line or edithe the AgentForward option in
+your SSH configuration file.
+It is suggested to not use SSH Agent Forwarding because it comes at cost of a security issue: a port-forwarding will be set up to
+connect you to the second host, so anyone with sufficient permission on the first host could be able to use that socket to connect
+to and use your local ssh-agent.
+It is recommended to never use SSH Agent Forwarding, if it is really needed by your use case it is suggested to use the option
+ProxyCommand instead.
+
 Limiting brute forcing attempts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -82,3 +95,8 @@ Alternatively, you can allow all users to login via SSH but deny only a few user
     DenyUsers foo bar
 
 You can also configure Linux PAM allows or deny login via the sshd server.
+
+References
+^^^^^^^^^^
+
+* https://heipei.github.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/
