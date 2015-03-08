@@ -148,10 +148,30 @@ Reduce Grace Time
 ^^^^^^^^^^^^^^^^^
 
 It is suggested to lower the default grace time for authenticating a user, it is only necessary if you are on a very
-slow connection otherwise it will hold unathenticated connections open for some time.
-To reduce the gracetime to 30 seconds, dit */sshd_config* file use *LoginGraceTime* option::
+slow connection otherwise it will hold unauthenticated connections open for some time.
+To reduce the gracetime to 30 seconds, edit */sshd_config* file use *LoginGraceTime* option::
 
     LoginGraceTime 30
+
+Use PAM
+^^^^^^^
+
+By default, OpenSSH uses PAM for the authentication of users.
+PAM (Pluggable Authentication Modules) is a powerful framework for managing authentication of users.
+Using PAM you can enforce rules during the authentication (i.e. limiting access based on login count).
+It is suggested to use PAM for SSH authentication too, edit */sshd_config* file and enable *UsePAM*::
+
+    UsePAM yes
+
+Use privilege separation
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is a good practice to never run processes as root, if yoi enable SSH privilege separation, the SSHd process has a
+tiny footprint running as root and it drops privileges as soon as possible to run as unprivileged process.
+It is suggested to enable privilege separation (usually it is enabled by default), edit */sshd_config* file and
+enable *UsePrivilegeSeparation*::
+
+    UsePrivilegeSeparation yes
 
 Whitelisting / blacklisting users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
