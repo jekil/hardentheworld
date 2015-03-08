@@ -36,6 +36,14 @@ Set a warning banner by updating *sshd_config* with the following line::
 
     Banner /etc/issue
 
+Disable .rhosts Files
+^^^^^^^^^^^^^^^^^^^^^
+
+SSH can be configured to emulate the behavior of the obsolete rsh command honoring .rhosts files.
+This is historically unsafe and it is suggested to disable it, edit *sshd_config* file and disable *IgnoreRhosts*::
+
+    IgnoreRhosts yes
+
 Disable Empty Passwords
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -43,6 +51,42 @@ You need to explicitly disallow remote login from accounts with empty passwords,
 line::
 
     PermitEmptyPasswords no
+
+Disable Host-Based Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is suggested to disable host-based authentication, as .rhost based authenticaiton, it is not rock solid authentication.
+To disable host-based authentication,  edit *sshd_config* file and disable *HostbasedAuthentication*::
+
+    HostbasedAuthentication no
+
+Disable Password Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default SSH can use keys or password to provide authentication, passwords are prone to brute force attacks.
+It is suggested to use keys only and completely disable password-based logins.
+To stop password based authentication, edit *sshd_config* file and disable *PasswordAuthentication*::
+
+    PasswordAuthentication no
+
+Disable Protocol 1
+^^^^^^^^^^^^^^^^^^
+
+The legacy SSH protocol 1 is not secure: it suffers of man-in-the-middle attacks and it has a myriad of vulnerabilities;
+it should be disabled although in most cases it already is
+by default.
+It is suggested to edit *sshd_config* file and add the following line to use only SSH protocol version 2::
+
+    Protocol 2
+
+Disable Root Logins
+^^^^^^^^^^^^^^^^^^^
+
+It is suggested to not enable root login via SSH, this account has high privileges and it is usually target of attacks.
+A good practice is to login with a normal user, the root account is still available by using *su* and *sudo* tools.
+To disallow logins with user root, edit */sshd_config* file and make sure you have the following entry::
+
+    PermitRootLogin no
 
 Disable SSH forwarding
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -65,7 +109,7 @@ Do not use SSH Agent Forwarding
 
 SSH Agent Forwarding is as an easy way to connect to a host with your SSH key and from there connect to another host with the same key.
 For example this is used when you cannot connect directly to the second host from your workstation.
-To enable SSH Agent Forwarding from comand line you have to use ssh -A from command line or edithe the AgentForward option in
+To enable SSH Agent Forwarding from command line you have to use ssh -A from command line or edithe the AgentForward option in
 your SSH configuration file.
 It is suggested to not use SSH Agent Forwarding because it comes at cost of a security issue: a port-forwarding will be set up to
 connect you to the second host, so anyone with sufficient permission on the first host could be able to use that socket to connect
@@ -73,12 +117,41 @@ to and use your local ssh-agent.
 It is recommended to never use SSH Agent Forwarding, if it is really needed by your use case it is suggested to use the option
 ProxyCommand instead.
 
+Increase Key Strength
+^^^^^^^^^^^^^^^^^^^^^
+
+It is suggested to use a length more than the default one.
+The following command instructs ssh-keygen with *-b* argument to generate a 4096-bit key::
+
+    $ ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa
+
+Feel free to increase this to your desired key length although remember to use powers of two.
+
 Limiting brute forcing attempts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 SSH is a service target of worms, script kiddies, and all kind of brute forcing around.
 It's a good idea to limit the maximum amount of login tries for second. This can be achieved with a few iptables
 lines or with `DenyHosts <http://denyhosts.sourceforge.net/>`_.
+
+Restrict IP Listen Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are in a multi homed setup (with multiple network interfaces) it is suggested to avoid having SSH listening on
+all interfaces, unless it is really needed. For example only a specific IP should be used for SSH.
+To specify on which IP to listen, edit */sshd_config* file use *ListenAddress* option, for example to listen only on the
+interface with IP 192.168.0.1::
+
+    ListenAddress 192.168.0.1
+
+Reduce Grace Time
+^^^^^^^^^^^^^^^^^
+
+It is suggested to lower the default grace time for authenticating a user, it is only necessary if you are on a very
+slow connection otherwise it will hold unathenticated connections open for some time.
+To reduce the gracetime to 30 seconds, dit */sshd_config* file use *LoginGraceTime* option::
+
+    LoginGraceTime 30
 
 Whitelisting / blacklisting users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
