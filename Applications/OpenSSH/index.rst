@@ -39,7 +39,7 @@ Set a warning banner by updating *sshd_config* with the following line::
 Disable .rhosts Files
 ^^^^^^^^^^^^^^^^^^^^^
 
-SSH can be configured to emulate the behavior of the obsolete rsh command honoring .rhosts files.
+SSH can be configured to emulate the behavior of the obsolete rsh command honoring *.rhosts* files.
 This is historically unsafe and it is suggested to disable it, edit *sshd_config* file and disable *IgnoreRhosts*::
 
     IgnoreRhosts yes
@@ -55,8 +55,8 @@ line::
 Disable Host-Based Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is suggested to disable host-based authentication, as .rhost based authenticaiton, it is not rock solid authentication.
-To disable host-based authentication,  edit *sshd_config* file and disable *HostbasedAuthentication*::
+It is suggested to disable host-based authentication, as *.rhost* based authenticaiton, it is not rock solid authentication.
+To disable host-based authentication, edit *sshd_config* file and disable *HostbasedAuthentication*::
 
     HostbasedAuthentication no
 
