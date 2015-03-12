@@ -29,6 +29,15 @@ Open *sshd_config* (usually located in */etc/ssh/sshd_config*) and make sure fol
     ClientAliveInterval 300
     ClientAliveCountMax 0
 
+Enable strict mode
+^^^^^^^^^^^^^^^^^^
+
+Using strict mode you can enforce some checks on important files inside users' home directory have the proper privileges
+and ownership, SSH daemon will only allow a remote user to log on if checks pass.
+It is suggested to enable strict mode editing *sshd_config* file and enabling *StrictModes*::
+
+    StrictModes yes
+
 Enable a Warning Banner
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -104,12 +113,40 @@ foobar::
     Match User foobar
     AllowTcpForwarding yes
 
+Disable TCP forwarding
+^^^^^^^^^^^^^^^^^^^^^^
+
+SSH supports "traffic tunneling", it is used to forward TCP traffic over SSH channel.
+If you are not using this feature it is suggested to disable it.
+To disable TCP forwarding, edit *sshd_config* file and disable *AllowTcpForwarding*::
+
+    AllowTcpForwarding no
+
+Disable user environment
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users logging via SSH are usually able to set environment options and potentially bypass some access restrictions.
+It is suggested, if this feature is not needed, to remove this permission, edit *sshd_config* file and disable
+*PermitUserEnvironment*::
+
+    PermitUserEnvironment no
+
+Disable X11 forwarding
+^^^^^^^^^^^^^^^^^^^^^^
+
+SSH supports X display forwarding, so X11 applications started on the remote system via SSH have their display shown on
+the client.
+If this feature is not used it is suggested to disable it, although it is disabled by default in most distributions.
+To disable X11 forwarding, edit *sshd_config* file and disable *X11Forwarding*::
+
+    X11Forwarding no
+
 Do not use SSH Agent Forwarding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 SSH Agent Forwarding is as an easy way to connect to a host with your SSH key and from there connect to another host with the same key.
 For example this is used when you cannot connect directly to the second host from your workstation.
-To enable SSH Agent Forwarding from command line you have to use ssh -A from command line or edithe the AgentForward option in
+To enable SSH Agent Forwarding from command line you have to use ssh -A from command line or edit the AgentForward option in
 your SSH configuration file.
 It is suggested to not use SSH Agent Forwarding because it comes at cost of a security issue: a port-forwarding will be set up to
 connect you to the second host, so anyone with sufficient permission on the first host could be able to use that socket to connect
@@ -186,6 +223,22 @@ To only allow antani and tapioco user to use the system via SSH, add the followi
 Alternatively, you can allow all users to login via SSH but deny only a few users, with the following line::
 
     DenyUsers foo bar
+
+You can also configure Linux PAM allows or deny login via the sshd server.
+
+Whitelisting / blacklisting groups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default all systems user can login via SSH using their password or public key.
+Sometime you create UNIX / Linux user account for ftp or email purpose. However, those user can login
+to system using SSH.
+To only allow users in a group (fo example in the foo group), add the following to *sshd_config*::
+
+    AllowGroup foo
+
+Alternatively, you can allow all users to login via SSH but deny only the users in the foo group, with the following line::
+
+    DenyGroups foo
 
 You can also configure Linux PAM allows or deny login via the sshd server.
 
