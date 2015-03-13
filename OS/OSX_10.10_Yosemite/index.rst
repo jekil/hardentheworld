@@ -131,6 +131,7 @@ Empty trash securely
 It is a good practice to always empty your trash securely.
 Start Finder app.
 Go to:
+
     Preferences ⇒ Advanced
 
 Check "Empty trash securely".
@@ -159,7 +160,7 @@ Go to:
 
     System Preferences ⇒ Security & Privacy ⇒ General
 
-Set "Require password immediatly after sleep or screen saver begins".
+Set "Require password immediately after sleep or screen saver begins".
 
 .. image:: images/settings_security_1.png
    :align: center
@@ -170,6 +171,7 @@ Show all filename extensions
 It is a good practice to always show file names extensions.
 Start Finder app.
 Go to:
+
     Preferences ⇒ Advanced
 
 Check "Show all filename extensions".
