@@ -141,6 +141,16 @@ To disable X11 forwarding, edit *sshd_config* file and disable *X11Forwarding*::
 
     X11Forwarding no
 
+Display a warning message before login
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A pre login SSH banner shows before the password prompt, during an interactive session.
+It is usually used for legal warnings or to show the terms by which someone is allowed to use the system.
+This message is commonly located in */etc/issue* but you can also use your custom file, for example */etc/ssh/banner*.
+It is suggested to use a warning banner, edit *sshd_config* file and set *Banner* option::
+
+    Banner /etc/ssh/banner
+
 Do not use SSH Agent Forwarding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
