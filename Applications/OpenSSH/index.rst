@@ -61,6 +61,17 @@ line::
 
     PermitEmptyPasswords no
 
+Disable gateway for forwarded ports
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SSH binds local port forwardings to the loopback address only, as default.
+This is a security feature to prevent other remote hosts from connecting to forwarded ports.
+The *GatewayPorts* option can be used to specify if this is the expected behaviour.
+It is suggested to disable *GatewayPorts*, it is already disabled by default in most distributions, edit *sshd_config*
+file and disable *IgnoreRhosts*::
+
+    GatewayPorts no
+
 Disable Host-Based Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
