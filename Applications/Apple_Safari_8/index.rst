@@ -38,6 +38,31 @@ Set “Remove download list items” to “Upon successful download”.
 .. image:: images/safari_general_3.png
    :align: center
 
+Control third party plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Most browsers allow the continuous running of all third party scripts, giving malware an huge surface area of attack
+to get into your machine.
+Safari can ask for user permission each time a plugin is run, this is a good practice to control which website is asking
+your browser to run a plugin.
+It is suggested to control the run of WebGL plugins, go to:
+
+    Open Safari ⇒ Preferences ⇒ Security
+
+Check “Allow WebGL” and click on "Website Settings...", set "When visiting other websites" to "Ask".
+
+.. image:: images/safari_security_2.png
+   :align: center
+
+It is suggested to control the run of WebGL plugins, go to:
+
+    Open Safari ⇒ Preferences ⇒ Security
+
+Check “Allow Plug-ins” and click on "Website Settings...", set "When visiting other websites" to "Ask".
+
+.. image:: images/safari_security_3.png
+   :align: center
+
 Disable AutoFill
 ^^^^^^^^^^^^^^^^
 
@@ -143,4 +168,17 @@ Go to:
 Check “Show full website address”.
 
 .. image:: images/safari_advanced_1.png
+   :align: center
+
+Warn when visiting a fraudulent website
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Safari can check the website you are visiting against a public and free feed on malicious websites.
+It is suggested to enable fraudulent website detection, go to:
+
+    Open Safari ⇒ Preferences ⇒ Security
+
+Check “Warn when visiting a fraudulent website”.
+
+.. image:: images/safari_security_1.png
    :align: center
