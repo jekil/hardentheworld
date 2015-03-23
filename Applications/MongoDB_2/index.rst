@@ -13,7 +13,7 @@ Authentication
 ^^^^^^^^^^^^^^
 
 Authentication is the process of verifying the identity of a client or a user. MongoDB supports different authentication
-mechanisms, it is suggested to always use authontication for all users and clients (with different credentials for each
+mechanisms, it is suggested to always use authentication for all users and clients (with different credentials for each
 one).
 Even if you have deployed MongoDB servers in a trusted network it is good security practice to enable authentication.
 Please refer to MongoDB documentation to understand how create and use users over different authentication mechanisms.
@@ -112,7 +112,7 @@ Limit Network Exposure
 
 Restriction access to the database service is a critical aspect of service security. It is suggested to do not expose
 your database to resourcers that are not in need to access it.
-You can use the --bind_ip option on the command line at run time or the bindIp in the configuration fileto limit the network 
+You can use the --bind_ip option on the command line at run time or the bindIp in the configuration file to limit the network
 accessibility of a MongoDB program. Example::
 
 	$ mongod --bind_ip 127.0.0.1
@@ -127,8 +127,8 @@ to place custom network traffic ACLs.
 Run MongoDB with a dedicated user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Priviledge separation should always be used, it is suggested to run MongoDB processes with a dedicated user account (an
-operative system account with the minimum priviledges needed to run the service).
+Privilege separation should always be used, it is suggested to run MongoDB processes with a dedicated user account (an
+operative system account with the minimum privileges needed to run the service).
 Most installers already creates a dedicated user when installing MongoDB.
 
 References
