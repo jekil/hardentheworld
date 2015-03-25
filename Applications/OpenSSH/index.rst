@@ -185,6 +185,15 @@ The following command instructs ssh-keygen with *-b* argument to generate a 4096
 
 Feel free to increase this to your desired key length although remember to use powers of two.
 
+Limit port forwarding
+^^^^^^^^^^^^^^^^^^^^^
+
+You don't want to expose the ports you open with port forwarding to other people.
+It is suggested to disable *GatewayPorts*, although in most distribution it is by default, to ensure that any
+port forwarding is limited to the local machine::
+
+    GatewayPorts no
+
 Limiting brute forcing attempts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
