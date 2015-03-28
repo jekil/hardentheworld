@@ -175,6 +175,14 @@ to and use your local ssh-agent.
 It is recommended to never use SSH Agent Forwarding, if it is really needed by your use case it is suggested to use the option
 ProxyCommand instead.
 
+Key storage
+^^^^^^^^^^^
+
+It is suggested to store your SSH keys in a secure storage and always encrypt your key files using a strong
+password.
+For example, you may want to store them on a secure and encrypted pendrive and only plug it in when you want
+to use SSH.
+
 Increase Key Strength
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -184,6 +192,10 @@ The following command instructs ssh-keygen with *-b* argument to generate a 4096
     $ ssh-keygen -b 4096 -t rsa -f ~/.ssh/id_rsa
 
 Feel free to increase this to your desired key length although remember to use powers of two.
+To slow down cracking attempts it is suggested to iterate the hash function many times, for example
+iterating 6000 times using the *-a* option::
+
+    $ ssh-keygen -b 4096  -a 6000 -t rsa -f ~/.ssh/id_rsa
 
 Limit port forwarding
 ^^^^^^^^^^^^^^^^^^^^^
