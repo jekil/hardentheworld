@@ -45,36 +45,6 @@ Set a warning banner by updating *sshd_config* with the following line::
 
     Banner /etc/issue
 
-Crypto key algorithms hardening
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-SSH supports different key exchange algorithms, ciphers and message authentication codes. There are ciphers for any
-security level.
-It is suggested to use only strong key exchange protocols, edit *sshd_config* file and set *KexAlgorithms*::
-
-    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
-
-Edit *ssh_config* file and set *KexAlgorithms*::
-
-    # Github needs diffie-hellman-group-exchange-sha1 some of the time but not always.
-    #Host github.com
-    #    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
-
-    Host *
-        KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
-
-Open */etc/ssh/moduli* if exists, and delete lines where the 5th column is less than 2000::
-
-    awk '$5 > 2000' /etc/ssh/moduli > "${HOME}/moduli"
-    wc -l "${HOME}/moduli" # make sure there is something left
-    mv "${HOME}/moduli" /etc/ssh/moduli
-    If it does not exist, create it:
-
-    ssh-keygen -G "${HOME}/moduli" -b 4096
-    ssh-keygen -T /etc/ssh/moduli -f "${HOME}/moduli"
-    rm "${HOME}/moduli"
-
-
 Disable .rhosts Files
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -269,6 +239,35 @@ It is suggested to enable privilege separation (usually it is enabled by default
 enable *UsePrivilegeSeparation*::
 
     UsePrivilegeSeparation yes
+
+Use strong key algorithms
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SSH supports different key exchange algorithms, ciphers and message authentication codes. There are ciphers for any
+security level.
+It is suggested to use only strong key exchange protocols, edit *sshd_config* file and set *KexAlgorithms*::
+
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+
+Edit *ssh_config* file and set *KexAlgorithms*::
+
+    # Github needs diffie-hellman-group-exchange-sha1 some of the time but not always.
+    #Host github.com
+    #    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
+
+    Host *
+        KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+
+Open */etc/ssh/moduli* if exists, and delete lines where the 5th column is less than 2000::
+
+    awk '$5 > 2000' /etc/ssh/moduli > "${HOME}/moduli"
+    wc -l "${HOME}/moduli" # make sure there is something left
+    mv "${HOME}/moduli" /etc/ssh/moduli
+    If it does not exist, create it:
+
+    ssh-keygen -G "${HOME}/moduli" -b 4096
+    ssh-keygen -T /etc/ssh/moduli -f "${HOME}/moduli"
+    rm "${HOME}/moduli"
 
 Whitelisting / blacklisting users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
