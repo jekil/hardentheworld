@@ -232,6 +232,30 @@ To reduce the gracetime to 30 seconds, edit */sshd_config* file use *LoginGraceT
 
     LoginGraceTime 30
 
+Route traffic over TOR
+^^^^^^^^^^^^^^^^^^^^^^
+
+If you would like to provide an additional layer of encryption, server authentication and some traffic analysis
+resistance you can access your SSH as an hidden service over TOR.
+Note: Attackers can still attack the SSH service, but don't know who they are attacking.
+This hardening step is not suggested, only a desiderata in needs of mention.
+
+If you want to access your SSH daemon only via hidden service, bind it only to localhost, edit *sshd_config*::
+
+    ListenAddress 127.0.0.1:22
+
+Create youe hidden service editing *torrc* (usually in */etc/tor/torrc*)::
+
+    HiddenServiceDir /var/lib/tor/hidden_service/ssh
+    HiddenServicePort 22 127.0.0.1:22
+
+You will find the hostname you have to use in */var/lib/tor/hidden_service/ssh/hostname*.
+Now you have to configure SSH client to connect over TOr. Install *socat* (it is used to route traffic over
+TOR) and configure SSH to use *socat* for each domain ending with *.onion*, editing *ssh_config*::
+
+    Host *.onion
+        ProxyCommand socat - SOCKS4A:localhost:%h:%p,socksport=9050
+
 Use PAM
 ^^^^^^^
 
