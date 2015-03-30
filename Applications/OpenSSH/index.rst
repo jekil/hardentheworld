@@ -213,6 +213,19 @@ SSH is a service target of worms, script kiddies, and all kind of brute forcing 
 It's a good idea to limit the maximum amount of login tries for second. This can be achieved with a few iptables
 lines or with `DenyHosts <http://denyhosts.sourceforge.net/>`_.
 
+Message authentication codes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are multiple ways to combine ciphers and MACs but only Encrypt-then-MAC should be used.
+It is suggested to use a selected list of MACs, edit *sshd_config* file::
+
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
+
+Also set the same configuration for SSH client, edit  *ssh_config* file::
+
+    Host *
+        MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
+
 Restrict IP Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
