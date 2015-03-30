@@ -269,6 +269,20 @@ TOR) and configure SSH to use *socat* for each domain ending with *.onion*, edit
     Host *.onion
         ProxyCommand socat - SOCKS4A:localhost:%h:%p,socksport=9050
 
+Symmetric ciphers
+^^^^^^^^^^^^^^^^^
+
+Symmetric ciphers are used to encrypt the transmission after the initial key exchange and successful authentication.
+
+It is suggested to use a selected list of strong ciphers, edit *sshd_config* file::
+
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+
+Also set the same configuration for SSH client, edit  *ssh_config* file::
+
+    Host *
+        Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+
 Use PAM
 ^^^^^^^
 
