@@ -356,7 +356,7 @@ Sometime you create UNIX / Linux user account for ftp or email purpose. However,
 to system using SSH.
 To only allow users in a group (fo example in the foo group), add the following to *sshd_config*::
 
-    AllowGroup foo
+    AllowGroups foo
 
 Alternatively, you can allow all users to login via SSH but deny only the users in the foo group, with the following line::
 
