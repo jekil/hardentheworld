@@ -231,7 +231,7 @@ Restrict IP Listen Address
 
 If you are in a multi homed setup (with multiple network interfaces) it is suggested to avoid having SSH listening on
 all interfaces, unless it is really needed. For example only a specific IP should be used for SSH.
-To specify on which IP to listen, edit */sshd_config* file use *ListenAddress* option, for example to listen only on the
+To specify on which IP to listen, edit *sshd_config* file use *ListenAddress* option, for example to listen only on the
 interface with IP 192.168.0.1::
 
     ListenAddress 192.168.0.1
@@ -241,7 +241,7 @@ Reduce Grace Time
 
 It is suggested to lower the default grace time for authenticating a user, it is only necessary if you are on a very
 slow connection otherwise it will hold unauthenticated connections open for some time.
-To reduce the gracetime to 30 seconds, edit */sshd_config* file use *LoginGraceTime* option::
+To reduce the gracetime to 30 seconds, edit *sshd_config* file use *LoginGraceTime* option::
 
     LoginGraceTime 30
 
@@ -275,7 +275,7 @@ Use PAM
 By default, OpenSSH uses PAM for the authentication of users.
 PAM (Pluggable Authentication Modules) is a powerful framework for managing authentication of users.
 Using PAM you can enforce rules during the authentication (i.e. limiting access based on login count).
-It is suggested to use PAM for SSH authentication too, edit */sshd_config* file and enable *UsePAM*::
+It is suggested to use PAM for SSH authentication too, edit *sshd_config* file and enable *UsePAM*::
 
     UsePAM yes
 
