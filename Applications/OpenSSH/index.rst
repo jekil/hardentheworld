@@ -53,6 +53,14 @@ This is historically unsafe and it is suggested to disable it, edit *sshd_config
 
     IgnoreRhosts yes
 
+Disable Challenge Response
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You should also disable challenge-response authentication, in case your version of OpenSSH is using PAM to authenticate.
+It is suggested to edit *sshd_config* file and disable *ChallengeResponseAuthentication*::
+
+    ChallengeResponseAuthentication no
+
 Disable Empty Passwords
 ^^^^^^^^^^^^^^^^^^^^^^^
 
