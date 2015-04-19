@@ -27,7 +27,7 @@ Contributing
 
 Every kind of contribution is really appreciated! Feature requests, suggestions,
 fixes or documentation contributions are welcome.
-Please send a push request with your contribution using Github push requests or
+Please send a patch with your contribution using Github `pull requests <https://help.github.com/articles/using-pull-requests/#sending-the-pull-request>`_ or
 just get in touch with me.
 
 Feedback
