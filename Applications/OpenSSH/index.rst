@@ -45,6 +45,11 @@ Set a warning banner by updating *sshd_config* with the following line::
 
     Banner /etc/issue
 
+This setting is suggested *only* on intranet facing servers. If you are using a custom banner on an internet facing
+system you are disclosing some kind of information and it is quite easy to fingerprint and track your system.
+For example think about your "fingerprint prone" SSH server published as an hidden node. Anyone could correlate the
+unique banner with you.
+
 Disable .rhosts Files
 ^^^^^^^^^^^^^^^^^^^^^
 
