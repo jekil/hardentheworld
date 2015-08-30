@@ -52,6 +52,28 @@ for example the *.git* folder, adding a location statement to deny access to *.g
         }
     }
 
+Deny illegal Host headers
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Malicious bots or vulnerability probing usually sends also requests with an
+improper or empty Host header.
+The default technique to block this kind of attempts is to use a "Catch all
+virtualhost", but in some cases, for example if your website is SSL/TLS
+encrypted, you can't use a default virtualhost.
+It is suggested to block all requests with an illegal Host header with the
+following configuration (example.com is your website in this example)::
+
+    server {
+        # Deny illegal Host headers.
+        if ($host !~* ^(example.com|www.example.com)$ ) {
+            return 444;
+        }
+    }
+
+The returned HTTP error code 444 is used in Nginx logs to indicate that the
+server has returned no response to the client and closed the connection (useful
+to block malicious requests).
+
 Disable Autoindex
 ^^^^^^^^^^^^^^^^^
 
