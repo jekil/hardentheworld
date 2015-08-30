@@ -40,6 +40,18 @@ Example of a redirect virtual host with HSTS enabled::
         return 301 https://www.example.com$request_uri;
     }
 
+Deny access to some resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes critical data are published during application deploy. It is suggested to deny access to sensitive resources,
+for example the *.git* folder, adding a location statement to deny access to *.git* or another resource::
+
+    server {
+        location ~ /\.git {
+            deny all;
+        }
+    }
+
 Disable Autoindex
 ^^^^^^^^^^^^^^^^^
 
@@ -56,15 +68,3 @@ global configuration file::
     server_tokens off;
 
 For more information see: http://wiki.nginx.org/HttpCoreModule#server_tokens
-
-Deny access to some resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Sometimes critical data are published during application deploy. It is suggested to deny access to sensitive resources,
-for example the *.git* folder, adding a location statement to deny access to *.git* or another resource::
-
-    server {
-        location ~ /\.git {
-            deny all;
-        }
-    }
