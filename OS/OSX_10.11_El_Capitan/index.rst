@@ -15,7 +15,7 @@ Park."*.
 Applications
 ^^^^^^^^^^^^
 
-It is suggested to keep the /Applications/ directory as clean as possible,
+It is suggested to keep the */Applications/* directory as clean as possible,
 having a separate directory for your personal apps lets you do that easily.
 Just create a folder named “Applications” in your home directory (or where you
 like) and install all applications there. Apps installed via App Store or some
@@ -35,6 +35,20 @@ if you want to be more strict and you install applications only via App Store
 set it to "Mac App Store".
 
 .. image:: images/settings_security_2.png
+   :align: center
+
+Check Privacy permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OS X allows you to track all applications requesting access to some sort of
+sensitive data, for example your location or your contacts.
+It is suggested to periodically check the list of applications requesting access
+to sensitive data and review their permissions.
+To show the list of these applications go to:
+
+    System Preferences ⇒ Security & Privacy ⇒ Privacy
+
+.. image:: images/settings_security_9.png
    :align: center
 
 Disable Diagnostics
@@ -98,6 +112,31 @@ Select "System Services" and click "Details...".
 Un-check "Safari & Spotlight Suggestions".
 
 .. image:: images/settings_security_3.png
+   :align: center
+
+Disable Spotlight Suggestions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default Spotlight shows suggestions from the Internet, it sends your search
+to Apple services and provides results back.
+It is suggested to use Spotlight only locally to prevent leaking your search.
+To disable Spotlight Suggestions go to:
+
+    System Preferences ⇒ Spotlight
+
+Un-check "Allow Spotlight Suggestions in Spotlight and Look Up".
+
+.. image:: images/settings_spotlight_1.png
+   :align: center
+
+It is suggested to disable results from Bing to avoid leaking your search to
+Bing, go to:
+
+    System Preferences ⇒ Spotlight
+
+Un-check "Bing Web Searches" from the list of results categories.
+
+.. image:: images/settings_spotlight_2.png
    :align: center
 
 Enable FileVault
@@ -241,6 +280,22 @@ Go to:
 Check "Show all filename extensions".
 
 .. image:: images/finder_1.png
+   :align: center
+
+Show when localization is used
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+System services could ask to use localization data.
+It is suggested to show location icon when localization data are requested.
+Go to:
+
+    System Preferences ⇒ Security & Privacy ⇒ Privacy ⇒ Location Services
+
+Select "System Services" and click "Details...".
+Check "Show location icon in the menu bar when System Services request your
+location".
+
+.. image:: images/settings_security_8.png
    :align: center
 
 Users privilege separation
