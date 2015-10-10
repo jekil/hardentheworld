@@ -59,11 +59,34 @@ Go to:
 
     System Preferences ⇒ Security & Privacy ⇒ Privacy ⇒ Diagnostics & Usage
 
-
 Un-check "Send diagnostic & usage data to Apple".
 Un-check "Share crash data with app developers".
 
 .. image:: images/settings_security_4.png
+   :align: center
+
+Disable Guest user
+^^^^^^^^^^^^^^^^^^
+
+Mac OS X comes with a *Guest* user enabled by default, it permits the use of
+your device in a restricted environment to anyone.
+It is suggested to disable the *Guest* user, go to:
+
+    System Preferences ⇒ Users & Groups ⇒ Guest User
+
+Un-check "Allow guests to log in to this computer".
+
+.. image:: images/settings_users_2.png
+   :align: center
+
+It is suggested to disable guest access to shared folders, if you are not using
+it, go to:
+
+    System Preferences ⇒ Users & Groups ⇒ Guest User
+
+Un-check "Allow guest users to connect to shared folders".
+
+.. image:: images/settings_users_3.png
    :align: center
 
 Disable Handoff
@@ -80,6 +103,20 @@ Go to:
 Un-check "Allow Handoff between this Mac and your iCloud devices".
 
 .. image:: images/settings_general_2.png
+   :align: center
+
+Disable password hints
+^^^^^^^^^^^^^^^^^^^^^^
+
+Passwords hints are supposed to help an user to remember his password but could
+also help attackers.
+It is suggested to disable password hints, go to:
+
+    System Preferences ⇒ Users & Groups ⇒ Login Options
+
+Un-check "Show password hints".
+
+.. image:: images/settings_users_1.png
    :align: center
 
 Disable recent items
