@@ -305,6 +305,29 @@ Set "Require password immediately after sleep or screen saver begins".
 .. image:: images/settings_security_1.png
    :align: center
 
+Set a Firmware Password
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Enabling an optional firmware password offers an increased level of protection.
+A firmware password is set on the actual Mac logicboards firmware, it is an EFI
+password which prevents your Mac from being booted from an external boot volume,
+single user mode, or target disk mode, and it also prevents resetting of PRAM
+and the ability to boot into Safe Mode.
+Years ago firmware passwords could be easily bypassed by removing memory.
+These days Mac's firmware password isn't easily reset. Apple only suggests to
+bring your Mac in to an authorized Apple Service Provider and have them do it
+there.
+
+It is suggested to set a firmware password:
+
+ * Power off your Mac and turn it on.
+ * Activate Recovery Mode (holding down the Command and R keys at boot).
+ * After a while OS X Utilities will appear.
+ * Click on the Utilities menu from the menu bar.
+ * Select Firmware Password Utility.
+ * Click on 'Turn On Firmware Password' and follow the wizard.
+ * When done, restart your Mac.
+
 Show all filename extensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
