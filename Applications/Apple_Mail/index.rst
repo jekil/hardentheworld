@@ -1,12 +1,31 @@
-Apple Mail 8
-------------
+Apple Mail 8 / 9
+----------------
 
 Apple Mail is a mail client application shipped by default with Max OS X.
 
-This chapter is dedicated to configuring Apple Mail version 8.x. It comes by default with Mac OS X 10.10 (Yosemite).
+This chapter is dedicated to configuring Apple Mail version 8.x and 9.x.  THey come by default with Mac OS X 10.10
+(Yosemite) and Mac OS X 10.11 (El Capitan).
 
 .. contents::
    :local:
+
+Disable automatic loading of remote content
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mail defaults to automatically load any images, styles etc, that are included in any email, regardless of sender.  Not
+only can this be an attack-vector, but it's also commonly used for tracking, leading to loss of privacy.
+
+Don't worry about disabling the automatic loading though, you'll still be able to load remote images and stylesheets for
+any mail with a single click.
+
+To disable automatic loading of remote content, go to:
+
+    Open Apple Mail  ⇒ Preferences ⇒ Viewing
+
+Uncheck "Load remote content in messages".
+
+.. image:: images/mail_6.png
+   :align: center
 
 Disable automatic account settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
