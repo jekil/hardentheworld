@@ -47,9 +47,11 @@ Disable automatic attachment download
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If this options is enabled Mail automatically downloads all attachments for your email account in Mail.
-It is suggested to keep the control over what is downloaded so disable this option.
+It is suggested to keep the control over what is downloaded so disable this option, automatically download
+attacchments is pretty dangerous, just think to someone sending you an email with an image on a controlled
+server, he could be able to track your IP address.
 
-To disable automatic attachments download, go to:
+It is suggested to disable automatic attachments download, go to:
 
     Open Apple Mail  ⇒ Accounts ⇒ Select your mail account ⇒ Advanced
 
@@ -57,6 +59,9 @@ Uncheck "Automatically download all attachments".
 
 .. image:: images/mail_5.png
    :align: center
+
+If you want to definitely block any connections it is suggested to configure a firewall, i.e. Little Snitch,
+and permit connections starting from Mail.app only to your mail server.
 
 Disable MailDrop
 ^^^^^^^^^^^^^^^^
@@ -73,17 +78,6 @@ Uncheck "Send large attachments with Mail Drop".
 
 .. image:: images/mail_3.png
    :align: center
-
-Prevent unwanted connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you got an HTML mail referencing external resources, like images, Mail loads it by default, without any prompt or
-option to disable this behavior.
-This is pretty dangerous, just think to someone sending you an email with an image on a controlled server, he could be
-able to track your IP address.
-It is suggested to block any unwanted connection from Mail, alhtough it does not supply an option, the only way to block
-connections is to configure a firewall, i.e. Little Snitch, and permit connections starting from Mail.app only to your
-mail server.
 
 Never add invitations to calendar automatically
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
