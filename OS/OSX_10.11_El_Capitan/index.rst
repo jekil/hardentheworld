@@ -305,6 +305,16 @@ Set "Require password immediately after sleep or screen saver begins".
 .. image:: images/settings_security_1.png
    :align: center
 
+Save to Disk by Default
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Many applications bundled in OS X, i.e. Text, saves by default new documents to
+iCloud.
+It is suggested to set default save target to be a local disk, not iCloud with
+the following command, open Terminal and type:
+
+    defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 Set a Firmware Password
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -365,3 +375,8 @@ It is suggested to use different accounts for administration and normal use.
 Create an account with admin privileges for special tasks and maintenance and a
 regular user for your normal use.
 Don't use the same password for both.
+
+References
+^^^^^^^^^^
+
+* https://github.com/herrbischoff/awesome-osx-command-line
