@@ -308,7 +308,7 @@ Set "Require password immediately after sleep or screen saver begins".
 Save to Disk by Default
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Many applications bundled in OS X, i.e. Text, saves by default new documents to
+Many applications bundled in OS X, i.e. Text, save by default new documents to
 iCloud.
 It is suggested to set default save target to be a local disk, not iCloud with
 the following command, open Terminal and type:
