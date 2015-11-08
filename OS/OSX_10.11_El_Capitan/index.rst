@@ -51,6 +51,23 @@ To show the list of these applications go to:
 .. image:: images/settings_security_9.png
    :align: center
 
+Disable Creation of Metadata Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default OS X creates metadata files in each directory to speed up browsing.
+These files could leak metadata, it is suggested to avoid creation of .DS_Store
+and AppleDouble files.
+
+Disable Creation of Metadata Files on Network Volumes with the following command
+in a Terminal::
+
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+Disable Creation of Metadata Files on USB Volumes with the following command
+in a Terminal::
+
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 Disable Diagnostics
 ^^^^^^^^^^^^^^^^^^^
 
@@ -311,7 +328,7 @@ Save to Disk by Default
 Many applications bundled in OS X, i.e. Text, save by default new documents to
 iCloud.
 It is suggested to set default save target to be a local disk, not iCloud with
-the following command, open Terminal and type:
+the following command, open Terminal and type::
 
     defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
