@@ -51,6 +51,27 @@ To show the list of these applications go to:
 .. image:: images/settings_security_9.png
    :align: center
 
+Disable Bonjour
+^^^^^^^^^^^^^^^
+
+According to `Wikipedia <https://en.wikipedia.org/wiki/Bonjour_(software)>`_
+Bonjour is *"Apple's implementation of Zero-configuration networking (Zeroconf),
+a group of technologies that includes service discovery, address assignment, and
+hostname resolution. Bonjour locates devices such as printers, other computers,
+and the services that those devices offer on a local network using multicast
+Domain Name System (mDNS) service records".*
+
+Bonjour sends some data about your OS on the network, so in some cases, in a not
+trusted network you would like to disable it.
+
+To disable Bonjour use the following command in a Terminal::
+
+    sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
+
+To enable Bonjour use the following command in a Terminal::
+
+    sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
+
 Disable Creation of Metadata Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
