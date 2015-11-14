@@ -51,6 +51,44 @@ To show the list of these applications go to:
 .. image:: images/settings_security_9.png
    :align: center
 
+Disable Bonjour
+^^^^^^^^^^^^^^^
+
+According to `Wikipedia <https://en.wikipedia.org/wiki/Bonjour_(software)>`_
+Bonjour is *"Apple's implementation of Zero-configuration networking (Zeroconf),
+a group of technologies that includes service discovery, address assignment, and
+hostname resolution. Bonjour locates devices such as printers, other computers,
+and the services that those devices offer on a local network using multicast
+Domain Name System (mDNS) service records".*
+
+Bonjour sends some data about your OS on the network, so in some cases, in a not
+trusted network you would like to disable it.
+
+To disable Bonjour use the following command in a Terminal::
+
+    sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
+
+To enable Bonjour use the following command in a Terminal::
+
+    sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
+
+Disable Creation of Metadata Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default OS X creates metadata files in each directory to speed up browsing.
+These files could leak metadata, it is suggested to avoid creation of .DS_Store
+and AppleDouble files.
+
+Disable Creation of Metadata Files on Network Volumes with the following command
+in a Terminal::
+
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+Disable Creation of Metadata Files on USB Volumes with the following command
+in a Terminal::
+
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 Disable Diagnostics
 ^^^^^^^^^^^^^^^^^^^
 
@@ -305,6 +343,16 @@ Set "Require password immediately after sleep or screen saver begins".
 .. image:: images/settings_security_1.png
    :align: center
 
+Save to Disk by Default
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Many applications bundled in OS X, i.e. Text, save by default new documents to
+iCloud.
+It is suggested to set default save target to be a local disk, not iCloud with
+the following command, open Terminal and type::
+
+    defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 Set a Firmware Password
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -365,3 +413,8 @@ It is suggested to use different accounts for administration and normal use.
 Create an account with admin privileges for special tasks and maintenance and a
 regular user for your normal use.
 Don't use the same password for both.
+
+References
+^^^^^^^^^^
+
+* https://github.com/herrbischoff/awesome-osx-command-line
