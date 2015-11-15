@@ -51,6 +51,23 @@ To show the list of these applications go to:
 .. image:: images/settings_security_9.png
    :align: center
 
+Destroy FileVault Keys
+^^^^^^^^^^^^^^^^^^^^^^
+
+By default File Vault keys are kept when system goes in standby mode.
+As suggested by *man pmset*::
+
+  destroyfvkeyonstandby - Destroy File Vault Key when going to standby
+     mode. By default File vault keys are retained even when system goes to
+     standby. If the keys are destroyed, user will be prompted to enter the
+     password while coming out of standby mode.(value: 1 - Destroy, 0 -
+     Retain)
+
+It is suggested to configure your system to destroy File Vault keys when enterging
+in standy mode with the following command::
+
+  sudo pmset destroyfvkeyonstandby 1
+
 Disable Bonjour
 ^^^^^^^^^^^^^^^
 
