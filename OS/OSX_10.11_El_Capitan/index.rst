@@ -334,6 +334,42 @@ are:
 
 Change DRIVE_NAME to the name of the mount point.
 
+Power off memory during standy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default during stand-by memeory are kept powered on, this is prone to
+forensics acquisition of your memory.
+As stated in *man pmset*::
+
+  hibernatemode supports values of 0, 3, or 25. Whether or not a hiberna-
+  tion image gets written is also dependent on the values of standby and
+  autopoweroff
+
+  For example, on desktops that support standby a hibernation image will be
+  written after the specified standbydelay time. To disable hibernation
+  images completely, ensure hibernatemode standby and autopoweroff are all
+  set to 0.
+
+  hibernatemode = 0 by default on desktops. The system will not back memory
+  up to persistent storage. The system must wake from the contents of mem-
+  ory; the system will lose context on power loss. This is, historically,
+  plain old sleep.
+
+  hibernatemode = 3 by default on portables. The system will store a copy
+  of memory to persistent storage (the disk), and will power memory during
+  sleep. The system will wake from memory, unless a power loss forces it to
+  restore from hibernate image.
+
+  hibernatemode = 25 is only settable via pmset. The system will store a
+  copy of memory to persistent storage (the disk), and will remove power to
+  memory. The system will restore from disk image. If you want "hiberna-
+  tion" - slower sleeps, slower wakes, and better battery life, you should
+  use this setting.
+
+It is suggested to power off memory at stand-by with the following command::
+
+  sudo pmset hibernatemode 25
+
 Require an administration password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
