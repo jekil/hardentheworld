@@ -239,6 +239,38 @@ Also set the same configuration for SSH client, edit  *ssh_config* file::
     Host *
         MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
 
+OTP Setup
+^^^^^^^^^
+
+Usually SSH only verifies one thing, your password or your private key, although multiple authentication methods 
+were allowed.
+Here we are going to see how to use Google Authentication as a OTP token during SSH authentication.
+Install the Google Authenticator PAM module, for example in Ubuntu you can use this command::
+
+    apt-get install libpam-google-authenticator
+
+Run the command *google-authenticator* for each user you need an OTP token on your device, you will get some
+questions to configure the token generator and at the end, a QR code will be displayed. Use it to setup your access
+token, for example on your phone, and safely save all the codes displayed.
+
+Configure SSH to use PAM editing *sshd_config* file with these values::
+
+    ChallengeResponseAuthentication yes
+    PasswordAuthentication no
+    AuthenticationMethods publickey,keyboard-interactive
+    UsePAM yes
+    PubkeyAuthentication yes
+
+Restart the SSH service. Now edit the PAM configuration to use Google Authentication, edit /etc/pam.d/sshd and replace the line::
+
+    @include common-auth
+
+With the line::
+
+    auth required pam_google_authenticator.so
+
+Now SSH logins will require a private key, and after it will additionally require an OTP token.
+
 Restrict IP Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
