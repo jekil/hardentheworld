@@ -242,7 +242,7 @@ Also set the same configuration for SSH client, edit  *ssh_config* file::
 OTP Setup
 ^^^^^^^^^
 
-Usually SSH only verifies one thing, your password or your private key, although multiple authentication methods 
+Usually SSH only verifies one thing, your password or your private key, although multiple authentication methods
 were allowed.
 Here we are going to see how to use Google Authentication as a OTP token during SSH authentication.
 Install the Google Authenticator PAM module, for example in Ubuntu you can use this command::
