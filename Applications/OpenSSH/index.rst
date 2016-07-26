@@ -20,6 +20,14 @@ port, using the *Port* option::
 
     Port 34567
 
+Compression after authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is suggested to enable compression only after authentication.
+Open *sshd_config* (usually located in */etc/ssh/sshd_config*) and make sure following value is configured::
+
+    Compression delayed
+
 Configure Idle Log Out Timeout Interval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
