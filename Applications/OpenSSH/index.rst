@@ -7,6 +7,7 @@ that their password is transmitted across the Internet unencrypted, but it is. O
 (including passwords) to effectively eliminate eavesdropping, connection hijacking, and other attacks.
 Additionally, OpenSSH provides secure tunneling capabilities and several authentication methods, and supports all
 SSH protocol versions"*.
+Different versions of OpenSSH support different options which are not always compatible. This guide show settings for the most commonly deployed OpenSSH versions.
 
 .. contents::
    :local:
