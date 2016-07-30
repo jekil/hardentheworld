@@ -289,6 +289,9 @@ With the line::
     auth required pam_google_authenticator.so
 
 Now SSH logins will require a private key, and after it will additionally require an OTP token.
+Log in as the user you’ll be logging in with remotely and run the *google-authenticator* command to create a
+secret key for that user.
+Restart SSH deamon.
 
 Restrict IP Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
