@@ -120,6 +120,16 @@ It is suggested to edit *sshd_config* file and add the following line to use onl
 
     Protocol 2
 
+Disable Roaming
+^^^^^^^^^^^^^^^
+
+OpenSSH has some undocumented, and rarely used features. It is suggested to disable roaming feature,
+in the past it leads to a known vulnerability.
+Add to  *ssh_config* file::
+
+    Host *
+        UseRoaming no
+
 Disable Root Logins
 ^^^^^^^^^^^^^^^^^^^
 
