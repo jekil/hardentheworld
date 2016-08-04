@@ -87,6 +87,16 @@ Set *max-clients* in the server configuration file, as follows (limited at 100 c
 
     max-clients 100
 
+Persistent VPN device
+^^^^^^^^^^^^^^^^^^^^^
+
+If your connection is interrupted and OpenVPN is trying to reconnect, in the meanwhile, traffic is passing
+by your default route, bypassing your VPN.
+It is suggested to configure OpenVPN to keep the device open and to hold traffic until the connection
+is restored, add the following option to the configuration file::
+
+    persist-tun
+
 Run as unprivileged user
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -104,6 +114,11 @@ For example, add to both server and client configuration file the following to u
 
     cipher AES-256-CBC
 
+Is also suggested to limit the use of TLS ciphersuites with::
+
+    tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256
+
+
 Secure PKI Management
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -116,6 +131,21 @@ It is suggested to follow best practices for secure PKI management, for example:
  * Never share private keys.
  * Use certificate passwords if possibile and use a secure password policy.
  * Use a CRL and revoke lost/compromised keys.
+
+Set minimum TLS version
+^^^^^^^^^^^^^^^^^^^^^^^
+
+It is suggested to set minimum TLS version editing the configuration file and adding::
+
+    tls-version-min 1.2
+
+SHA-2 for message authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is suggested to use strong alghoritm for message authentication (HMAC).
+Add the following line to the configuration file::
+
+    auth SHA-256
 
 Use PSK
 ^^^^^^^
@@ -140,6 +170,15 @@ Add the following line to your server configuration::
 Beware, the *--tls-auth* key is changed, it must be changed on all peers at the same time, so it could
 potentially lead to a network management horror story. It is suggested to use it with care.
 
+Verify Certificate subject name
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is not a general reccomendation although in some cases could be useful to verirify X.509 certificate
+subject name on the client.
+Add to the client configuration file the following line::
+
+    verify-x509-name 'C=XX, O=Example, CN=example.xxx' subject
+
 Verify CRL
 ^^^^^^^^^^
 
@@ -155,6 +194,18 @@ It is recommended to check that the server certificate contains a specific key u
 Add to the client configuration file the following line::
 
     remote-cert-tls server
+
+This also is a measure to prevent a client using his certificate to impersonate a server.
+
+Certificates using the X509v3 format have key usage flags set. Clients should use certificates with the "TLS Web Client Authentication" set and servers with "TLS Web Server Authentication" set. 
+
+Add to the client configuration file the following line::
+
+    remote-cert-eku "TLS Web Server Authentication"
+
+Add to the server configuration file the following line::
+
+    remote-cert-eku "TLS Web Client Authentication"
 
 References
 ^^^^^^^^^^
