@@ -13,7 +13,8 @@ If possibile, it is suggested to request an additional authentication in additio
 This could protect you in case of certificate loss.
 Additional authentication could be configured server side in two ways:
 
- * Using the *auth-user-pass-verify
+ * Using the *auth-user-pass-verify*
+ * Using a plugin (i.e. PAM)
 
 Attacks on default gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,7 +111,7 @@ Secure Ciphers
 ^^^^^^^^^^^^^^
 
 It is suggested to use strong symmetric ciphers (at least 256bit).
-For example, add to both server and client configuration file the following to use AES-256:
+For example, add to both server and client configuration file the following to use AES-256::
 
     cipher AES-256-CBC
 
@@ -124,7 +125,7 @@ Secure PKI Management
 
 OpenVPN authentication, in most cases, is based on PKI and X.509 certificates. Practicing secure PKI management
 is mandatory to safeguard, also, OpenVPN.
-It is suggested to follow best practices for secure PKI management, for example::
+It is suggested to follow best practices for secure PKI management, for example:
 
  * Secure management of CA PKI.
  * Generate private keys on the target system and never transport them.
