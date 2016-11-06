@@ -1,8 +1,8 @@
-Mac OSX 10.11 El Capitan
-------------------------
+Mac OSX 10.12 Sierra
+--------------------
 
 According to `Wikipedia <https://en.wikipedia.org/wiki/MacOS_Sierra>`_ Sierra
-is *"(version 10.13) is the thirteenth major release of macOS (previously OS X),
+is *"(version 10.12) is the thirteenth major release of macOS (previously OS X),
 Apple Inc.'s desktop and server operating system for Macintosh computers.
 The successor to OS X El Capitan, it is the first version of the operating system
 issued under the June 2016 rebranding as macOS. Sierra is named after California's
