@@ -55,7 +55,7 @@ Destroy FileVault Keys
 ^^^^^^^^^^^^^^^^^^^^^^
 
 By default File Vault keys are kept when system goes in standby mode.
-As suggested by *man pmset*::
+As suggested by *man pmset*:
 
   destroyfvkeyonstandby - Destroy File Vault Key when going to standby
      mode. By default File vault keys are retained even when system goes to
@@ -294,7 +294,7 @@ has removed this feature in OS X El Capitan. However, you can use command line
 tools.
 
 You can use the *rm* command from Terminal to delete files with the *-P* option,
-as stated in *man rm* this option is used to::
+as stated in *man rm* this option is used to:
 
     Overwrite regular files before deleting them. Files are
     overwritten three times, first with the byte pattern 0xff,
@@ -305,7 +305,7 @@ For example if you what to delete *test.pdf* you should open Terminal and use::
     $ rm -P test.pdf
 
 The *srm* command is specifically designed for secure deletion from command
-line, as stated in *man srm*::
+line, as stated in *man srm*:
 
     srm  removes each specified file by overwriting, renaming, and truncating
     it before unlinking. This prevents other people from undeleting  or
@@ -339,7 +339,7 @@ Power off memory during standy
 
 By default during stand-by memeory are kept powered on, this is prone to
 forensics acquisition of your memory.
-As stated in *man pmset*::
+As stated in *man pmset*:
 
   hibernatemode supports values of 0, 3, or 25. Whether or not a hiberna-
   tion image gets written is also dependent on the values of standby and
