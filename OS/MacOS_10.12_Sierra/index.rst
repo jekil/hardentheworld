@@ -1,5 +1,5 @@
-Mac OSX 10.12 Sierra
---------------------
+MacOS 10.12 Sierra
+------------------
 
 According to `Wikipedia <https://en.wikipedia.org/wiki/MacOS_Sierra>`_ Sierra
 is *"(version 10.12) is the thirteenth major release of macOS (previously OS X),
@@ -425,3 +425,4 @@ References
 ^^^^^^^^^^
 
 * https://github.com/herrbischoff/awesome-osx-command-line
+* http://www.frameloss.org/2011/09/18/firewire-attacks-against-mac-os-lion-filevault-2-encryption/
