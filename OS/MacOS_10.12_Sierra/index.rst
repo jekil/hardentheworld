@@ -125,6 +125,22 @@ Un-check "Allow guest users to connect to shared folders".
 .. image:: images/settings_users_3.png
    :align: center
 
+Disable Handoff
+^^^^^^^^^^^^^^^
+
+Handoff is a great feature to keep your work in sync between Apple devices.
+Due to his implementation it needs to send some data to Apple iCloud to work, so
+in some way it is leaking your data.
+It is suggested to disable it.
+Go to:
+
+    System Preferences ⇒ General
+
+Un-check "Allow Handoff between this Mac and your iCloud devices".
+
+.. image:: images/settings_general_2.png
+   :align: center
+
 Disable password hints
 ^^^^^^^^^^^^^^^^^^^^^^
 
