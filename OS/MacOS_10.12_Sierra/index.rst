@@ -304,6 +304,37 @@ are:
 
 Change DRIVE_NAME to the name of the mount point.
 
+Homebrew hardening
+^^^^^^^^^^^^^^^^^^
+
+Homebrew is a quite common third party tool in OS X systems.
+
+It is suggested to disable anonymous statics collections adding the following
+variable to your *.bash_profile* or *.profile* (or your shell configuration)
+file::
+
+  export HOMEBREW_NO_ANALYTICS=1
+
+It is suggested to disable automatic updates to keep in control of brew
+updates, add the following to your *.bash_profile* or *.profile*
+(or your shell configuration) file::
+
+  export HOMEBREW_NO_AUTO_UPDATE=1
+
+It is suggested to configure brew to do not leak your GitHub username. When
+checking out a public repository, by default, your username is always sent.
+Add the following to your *.bash_profile* or *.profile* (or your shell
+configuration) file::
+
+  export HOMEBREW_NO_GITHUB_API=1
+
+Is is suggested to configure brew to avoid protocol downgrades from HTTPS
+to HTTP via redirect.
+Add the following to your *.bash_profile* or *.profile* (or your shell
+configuration) file::
+
+  export HOMEBREW_NO_INSECURE_REDIRECT=1
+
 Power off memory during standy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
