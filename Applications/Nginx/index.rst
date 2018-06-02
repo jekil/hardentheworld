@@ -22,6 +22,16 @@ Create a virtualhost with the following configuration::
        deny all;
     }
 
+Enable Anti-Clickjacking Header
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The X-Frame-Options will instruct a browser to load the resources only from the same origin, this means the page
+can't load inside a framed tag (i.e. frame or iframe). Use this only if your business doesn't plan to have the
+site loaded in a frame.
+Add the following code to your virtual host or server block of your site::
+
+    add_header X-Frame-Options "SAMEORIGIN";
+
 Enable HTTP Strict Transport Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,6 +49,14 @@ Example of a redirect virtual host with HSTS enabled::
         add_header Strict-Transport-Security max-age=15768000;
         return 301 https://www.example.com$request_uri;
     }
+
+Enable X-XSS Protection
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The X-XSS protection is used to mitigate Cross-Site scripting attacks.
+Add the following code to your virtual host or server block of your site::
+
+    add_header X-XSS-Protection "1; mode=block";
 
 Deny access to some resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -81,6 +99,15 @@ It is suggested to disable the autoindex module, disabling the directive *autoin
 
     autoindex off;
 
+Disable Content-type Sniffing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This header will prevent the browser from interpreting files as something else than declared by the content type
+in the HTTP headers.
+Add the following code to your virtual host or server block of your site::
+
+    add_header X-Content-Type-Options nosniff;
+
 Disable Server Signature
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -90,3 +117,13 @@ global configuration file::
     server_tokens off;
 
 For more information see: http://wiki.nginx.org/HttpCoreModule#server_tokens
+
+Disable SSI module
+^^^^^^^^^^^^^^^^^^
+
+It is suggested to disable the HTTP SSI module.
+Add the following code to your virtual host or server block of your site::
+
+    ssi off;
+
+For more information see: http://nginx.org/en/docs/http/ngx_http_ssi_module.html
