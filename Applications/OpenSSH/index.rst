@@ -207,6 +207,16 @@ to and use your local ssh-agent.
 It is recommended to never use SSH Agent Forwarding, if it is really needed by your use case it is suggested to use the option
 ProxyCommand instead.
 
+Hash Known Hosts
+^^^^^^^^^^^^^^^^
+
+If a machine is compromised, a good idea is to minimize how much usable information is given to an attacker. The known_hosts
+file is a source of relevant information.
+*HashKnownHosts* is a configurable option, used to hash host names and addresses when they are added to *~/.ssh/known_hosts*.
+It is suggested to enable it, addint to your SSH configuration file::
+
+    HashKnownHosts Yes
+
 Key storage
 ^^^^^^^^^^^
 
