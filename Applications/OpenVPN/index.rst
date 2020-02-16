@@ -88,6 +88,17 @@ Set *max-clients* in the server configuration file, as follows (limited at 100 c
 
     max-clients 100
 
+Migrate from old cipher
+^^^^^^^^^^^^^^^^^^^^^^^
+
+If using OpenVPN v2.4, Negotiable Crypto Parameters (NCP) allows to seamlessly migrate away from deprecated ciphers without much extra work. If both client and server runs OpenVPN v2.4 without NCP being disabled (--ncp-disable), the tunnel will automatically be upgraded to AES-256-GCM. If the environment also uses clients older than OpenVPN v2.4, the server can deploy::
+
+    ncp-ciphers AES-256-GCM:AES-256-CBC:BF-CBC
+
+This will allow older clients to add or change --cipher to use AES-256-CBC instead of the default BF-CBC or any other cipher enlisted. This can be done on client configuration files on a one-by-one approach. Unmodified clients will be able to connect as before. Once all clients have been updated to OpenVPN v2.4 or later (preferred) or have their configuration altered, the --ncp-ciphers list can be modified to remove BF-CBC.
+
+This migration approach will not work after the release of OpenVPN v2.6. As of that release, BF-CBC, CAST or RC2 ciphers will not be accepted any more.
+
 Persistent VPN device
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -118,7 +129,6 @@ For example, add to both server and client configuration file the following to u
 Is also suggested to limit the use of TLS ciphersuites with::
 
     tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256
-
 
 Secure PKI Management
 ^^^^^^^^^^^^^^^^^^^^^
