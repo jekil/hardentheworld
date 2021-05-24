@@ -1,7 +1,7 @@
 LittleSnitch 3
 --------------
 
-According to the vendor `website <http://www.obdev.at/products/littlesnitch/index.html>`_ LittleSnitch is *"a firewall
+According to the vendor `website <https://www.obdev.at/products/littlesnitch/index.html>`_ LittleSnitch is *"a firewall
 that intercepts unwanted connection attempts, and lets you decide how to proceed"*.
 
 It is really common, and a best practice, to replace Mac OS X default firewall with a more advanced firewall like Little

@@ -7,7 +7,7 @@ services.
 So I created Harden the World in the hope to start a community project focused on developing common guidelines and best practices to deploy secure configurations.
 This repository contains hardening guidelines for devices, applications and OSs.
 
-**Project home**: `<http://hardentheworld.org>`_
+**Project home**: `<https://hardentheworld.org>`_
 
 **Project repository**: `<https://github.com/jekil/hardentheworld>`_
 
@@ -39,7 +39,7 @@ Please send questions, comments, suggestions or rants to alessandro@tanasi.it (`
 License
 *******
 
-Harden the world project is licensed: `Creative Commons Attribution 4.0 International <http://creativecommons.org/licenses/by/4.0/>`_.
+Harden the world project is licensed: `Creative Commons Attribution 4.0 International <https://creativecommons.org/licenses/by/4.0/>`_.
 
 You are free to:
 

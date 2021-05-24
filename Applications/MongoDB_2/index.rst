@@ -134,4 +134,4 @@ Most installers already creates a dedicated user when installing MongoDB.
 References
 ^^^^^^^^^^
 
-* http://docs.mongodb.org/v2.6/MongoDB-security-guide.pdf
+* https://docs.mongodb.com/manual/administration/security-checklist/

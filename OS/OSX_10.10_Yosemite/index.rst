@@ -1,7 +1,7 @@
 Mac OSX 10.10 Yosemite
 ----------------------
 
-According to `Wikipedia <http://en.wikipedia.org/wiki/OS_X_Yosemite>`_ Yosemite is *"OS X Yosemite (version 10.10) is
+According to `Wikipedia <https://en.wikipedia.org/wiki/OS_X_Yosemite>`_ Yosemite is *"OS X Yosemite (version 10.10) is
 the eleventh major release of OS X, Apple Inc.'s desktop and server operating system for Macintosh computers"*.
 
 .. contents::
