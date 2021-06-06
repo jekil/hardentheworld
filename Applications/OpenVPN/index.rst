@@ -222,5 +222,4 @@ References
 ^^^^^^^^^^
 
 * https://community.openvpn.net/openvpn/wiki/Hardening
-* http://darizotas.blogspot.it/2014/04/openvpn-hardening-cheat-sheet.html
 * https://www.agwa.name/blog/post/hardening_openvpn_for_def_con

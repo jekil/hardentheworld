@@ -17,7 +17,7 @@ Connection Error Limit
 ^^^^^^^^^^^^^^^^^^^^^^
 
 It is suggested to apply host ban to clients with many unsuccessful authentications.
-As stated in `MySQL documentation <http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_connect_errors>`_:
+As stated in `MySQL documentation <https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_connect_errors>`_:
 
 *If there are more than this number of interrupted connections from a host, that host is blocked from further connections. You can unblock blocked hosts with the FLUSH HOSTS statement.
 If a connection is established successfully within fewer than max_connect_errors attempts after a previous connection was interrupted, the error count for the host is cleared to zero. However, once a host is blocked, the FLUSH HOSTS statement is the only way to unblock it.*
