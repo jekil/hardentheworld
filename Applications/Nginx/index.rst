@@ -1,7 +1,7 @@
 Nginx
 -----
 
-According to `Nginx official website <http://nginx.org/>`_ Nginx is *"is an HTTP and reverse proxy server, a mail
+According to `Nginx official website <https://nginx.org/>`_ Nginx is *"is an HTTP and reverse proxy server, a mail
 proxy server, and a generic TCP proxy server, originally written by Igor Sysoev. For a long time, it has been running
 on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler."*.
 
@@ -116,7 +116,7 @@ global configuration file::
 
     server_tokens off;
 
-For more information see: http://wiki.nginx.org/HttpCoreModule#server_tokens
+For more information see: https://wiki.nginx.org/HttpCoreModule#server_tokens
 
 Disable SSI module
 ^^^^^^^^^^^^^^^^^^
@@ -126,4 +126,4 @@ Add the following code to your virtual host or server block of your site::
 
     ssi off;
 
-For more information see: http://nginx.org/en/docs/http/ngx_http_ssi_module.html
+For more information see: https://nginx.org/en/docs/http/ngx_http_ssi_module.html

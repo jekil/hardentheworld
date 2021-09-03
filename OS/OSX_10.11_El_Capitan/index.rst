@@ -472,4 +472,3 @@ References
 
 * https://github.com/herrbischoff/awesome-osx-command-line
 * http://www.frameloss.org/2011/09/18/firewire-attacks-against-mac-os-lion-filevault-2-encryption/
-* http://training.apple.com/pdf/WP_FileVault2.pdf

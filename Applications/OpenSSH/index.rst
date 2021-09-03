@@ -1,7 +1,7 @@
 OpenSSH
 -------
 
-According to `OpenSSH official website <http://www.openssh.com/>`_ OpenSSH is used *"OpenSSH is a free version of the
+According to `OpenSSH official website <https://www.openssh.com/>`_ OpenSSH is used *"OpenSSH is a free version of the
 SSH connectivity tools that technical users of the Internet rely on. Users of telnet, rlogin, and ftp may not realize
 that their password is transmitted across the Internet unencrypted, but it is. OpenSSH encrypts all traffic
 (including passwords) to effectively eliminate eavesdropping, connection hijacking, and other attacks.
